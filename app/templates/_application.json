@@ -1,0 +1,52 @@
+{
+  "html-app" : "/dist/index.html",
+  "resources" : {
+    "dist" : {
+      "type" : "filesystem",
+      "config" : {
+        "directory" : "<%='${application.dir}/dist/'%>"
+      }
+    },
+    "scripts" : {
+      "type" : "filesystem",
+      "config" : {
+        "directory" : "<%='${application.dir}/dist/scripts/'%>"
+      }
+    },
+    "styles" : {
+      "type" : "filesystem",
+      "config" : {
+        "directory" : "<%='${application.dir}/dist/styles/'%>"
+      }
+    },
+    "views" : {
+      "type" : "filesystem",
+      "config" : {
+        "directory" : "<%='${application.dir}/dist/views/'%>"
+      }
+    },
+    "bower_components" : {
+      "type" : "filesystem",
+      "config" : {
+        "directory" : "<%='${application.dir}/bower_components/'%>"
+      }
+    },
+    "client" : {
+      "type" : "aggregating-filesystem",
+      "config" : {
+        "directory" : "<%='${io.liveoak.js.dir}'%>"
+      }
+    },
+
+    "storage" : {
+      "type" : "mongo",
+      "config" : {
+        "db" : "chat-demo",
+        "servers" : [ {
+            "host" : "<%= serverHost %>",
+            "port" : 27017
+        } ]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<div class="row">
+  <form ng-submit="sendMessage()" class="navbar-form">
+    <div class="form-group">
+      <input name="msg" ng-model="message.name" class="form-control" placeholder="Type your name...">
+    </div>
+    <div class="form-group">
+      <input name="msg" ng-model="message.text" class="form-control" placeholder="Type your message...">
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Send" class="btn btn-primary" ng-disabled="!message.name || !message.text">
+    </div>
+  </form>
+</div>
+
+<div class="row">
+  <ul class="list-group">
+    <li class="list-group-item" ng-class-even="'list-group-item-success'" ng-class-odd="'list-group-item-warning'"
+        ng-repeat="msg in messages">
+      <span class="badge">{{msg.time | date:'mediumTime'}}</span>
+      <b>{{msg.name}}</b>: {{msg.text}}
+    </li>
+  </ul>
+</div>

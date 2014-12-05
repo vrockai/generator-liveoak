@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="LiveOak Example Application">
+    <meta name="viewport" content="width=device-width">
+    <!--link rel="stylesheet" href="styles/main.css"-->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:loClient(.) . -->
+    <script src="http://localhost:8080/<%= appname %>/client/liveoak.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body ng-app="<%= appname %>">
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a ng-href="#/">Home</a></li>
+          <li><a ng-href="http://liveoak.io/">Help</a></li>
+        </ul>
+        <h3 class="text-muted"><%= appname %> - LiveOak chat application</h3>
+      </div>
+
+      <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+
+      <div class="footer">
+        <p><span class="glyphicon glyphicon-heart"></span> from the LiveOak team</p>
+      </div>
+    </div>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/services/liveoak.js"></script>
+  </body>
+</html>
