@@ -66,7 +66,7 @@ var LiveoakGenerator = yeoman.generators.Base.extend({
       this.template('_package.json', 'package.json');
       this.template('_application.json', 'application.json');
 
-      this.src.copy('.gitignore', 'app/templates/_gitignore');
+      this.template('_gitignore', '.gitignore');
     },
 
     projectfiles: function () {
