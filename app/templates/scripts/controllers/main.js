@@ -15,6 +15,7 @@ angular.module('<%= appname %>')
 
     $scope.sendMessage = function(){
       MessageService.sendMessage($scope.message);
+      $scope.message.text = '';
     };
 
     LiveOak.connect( function() {
