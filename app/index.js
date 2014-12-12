@@ -3,8 +3,6 @@ var util = require('util');
 var URL = require('url');
 var path = require('path');
 var yeoman = require('yeoman-generator');
-var angular = require('generator-angular');
-var yosay = require('yosay');
 var chalk = require('chalk');
 
 var LiveoakGenerator = yeoman.generators.Base.extend({
