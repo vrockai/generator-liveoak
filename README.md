@@ -1,14 +1,12 @@
-# generator-liveoak [![Build Status](https://secure.travis-ci.org/vrockai/generator-liveoak.png?branch=master)](https://travis-ci.org/vrockai/generator-liveoak)
+![](http://design.jboss.org/liveoak/banner/images/liveoak-banner-1180px.png)
 
-> [Yeoman](http://yeoman.io) generator
-
+# generator-liveoak
 
 ## Getting Started
 
 ### What is Yeoman?
 
 Trick question. It's not a thing. It's this guy:
-
 ![](http://i.imgur.com/JHaAlBJ.png)
 
 Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
@@ -29,11 +27,37 @@ To install generator-liveoak from npm, run:
 npm install -g generator-liveoak
 ```
 
-Finally, initiate the generator:
+### LiveOak Generator
+
+The liveoak-generator is used to quickly scaffold a simple [LiveOak](http://liveoak.io) (chat) application, very similar to the [LiveOak](http://liveoak.io) [liveoak-example-chat-html](https://github.com/liveoak-io/liveoak-example-chat-html) example. It's using many [LiveOak](http://liveoak.io) features OOTB, like the storage and subscriptions. To scaffold new project, just create a new directory, access it and run:
+
+```bash
+yo liveoak myApp
+```
+
+You'll be prompted to provide the host and port of your [LiveOak](http://liveoak.io) server. If you're running the server on your localhost, just press enter and the default value `http://localhost:8080` will be used. This will create new Angular.JS based [LiveOak](http://liveoak.io) project called `myApp`. You can initialize the project without the application name, like:
 
 ```bash
 yo liveoak
 ```
+
+In that case, the name of the current folder will be used as the application name.
+
+After the initialization you need to create an application with the same name in [LiveOak](http://liveoak.io). Creating a basic application with default settings is recommended for this newly created project to operate correctly.
+
+To start the actual application, simply run:
+
+```bash
+grunt serve
+```
+
+This will start the Node.JS web server hosting your application and start a web browser, opening the application. If you want to host the application directly on the [LiveOak](http://liveoak.io) server, you need to build it first with:
+
+```bash
+grunt build
+```
+
+After the build process you'll be able to locally import the application directory to the [LiveOak](http://liveoak.io) server or you can even push it to github and import from there. The build process is basically a rip-off of the [generator-angular](https://github.com/yeoman/generator-angular). It minimize and concat the js and css files and make the whole project ready for production. Visit the generator project [page](https://github.com/yeoman/generator-angular) to learn more.
 
 ### Getting To Know Yeoman
 
