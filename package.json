@@ -1,6 +1,6 @@
 {
   "name": "generator-liveoak",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Yeoman generator for LiveOak Projects",
   "license": "MIT",
   "main": "app/index.js",
