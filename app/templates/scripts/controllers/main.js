@@ -10,6 +10,8 @@
 angular.module('<%= appname %>')
   .controller('MainCtrl', function ($scope, LiveOak, MessageService, $log) {
 
+    var app = LiveOak.app();
+
     $scope.message = {name:'Anonymous', text: ''};
     $scope.messages = [];
 
@@ -19,11 +21,11 @@ angular.module('<%= appname %>')
     };
 
     LiveOak.connect( function() {
-      LiveOak.create( '/<%= appname %>/storage', { id: 'chat' }, {
+      app.create( '/storage', { id: 'chat' }, {
         success: function() {
           $log.debug('Info: Chat collection created.');
 
-          LiveOak.subscribe( '/<%= appname %>/storage/chat/*', function(data, action) {
+          app.subscribe( '/storage/chat/*', function(data, action) {
             $scope.$apply(function(){
               console.log($scope.message);
               console.log($scope.messages);
@@ -37,7 +39,7 @@ angular.module('<%= appname %>')
             });
           });
 
-          LiveOak.read( '/<%= appname %>/storage/chat?fields=*(*)', {
+          app.read( '/storage/chat?fields=*(*)', {
             sort: 'time',
             success: function(data) {
               $scope.$apply(function() {

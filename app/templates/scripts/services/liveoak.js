@@ -41,7 +41,7 @@ angular.module('<%= appname %>').factory('MessageService', function (LiveOak, $l
       return;
     }
     $log.debug('INFO: Going to create new message item in the collection.');
-    LiveOak.create( '/<%= appname %>/storage/chat',
+    LiveOak.app().create( '/storage/chat',
       {
         name: message.name,
         text: message.text,
